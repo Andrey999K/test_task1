@@ -49,7 +49,7 @@ const SettingContent = () => {
 
 	return (
 		<Routes>
-			<Route path="edit-profile/:userid?" element={<EditProfile userId={userId} />} />
+			<Route path="edit-profile/:userid" element={<EditProfile userId={userId} />} />
 			<Route path="*" element={<Navigate to="edit-profile" replace />} />
 		</Routes>
 	)

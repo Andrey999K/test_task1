@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'
 import { Avatar } from 'antd';
-import {APP_PREFIX_PATH} from "../../../configs/AppConfig";
-import {Link} from "react-router-dom";
 
 const renderAvatar = props => {
 	return <Avatar {...props} className={`ant-avatar-${props.type}`}>{props.text}</Avatar>;
@@ -11,7 +9,7 @@ const renderAvatar = props => {
 export const AvatarStatus = props => {
 	const { name, suffix, subTitle, id, type, src, icon, size, shape, gap, text, onNameClick } = props
 	return (
-		<Link to={`${APP_PREFIX_PATH}/main/setting/edit-profile/${id}`} className="avatar-status d-flex align-items-center">
+		<div className="avatar-status d-flex align-items-center">
 			{renderAvatar({icon, src, type, size, shape, gap, text })}
 			<div className="ml-2">
 				<div>
@@ -25,7 +23,7 @@ export const AvatarStatus = props => {
 				</div>
 				<div className="text-muted avatar-status-subtitle">{subTitle}</div>
 			</div>
-		</Link>
+		</div>
 	)
 }
 

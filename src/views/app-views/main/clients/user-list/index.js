@@ -7,6 +7,8 @@ import AvatarStatus from 'components/shared-components/AvatarStatus';
 import userData from "assets/data/user-list.data.json";
 import axios from "axios";
 import Loading from "../../../../../components/shared-components/Loading";
+import {APP_PREFIX_PATH} from "../../../../../configs/AppConfig";
+import {Link} from "react-router-dom";
 
 export class UserList extends Component {
 
@@ -58,7 +60,9 @@ export class UserList extends Component {
 				dataIndex: 'name',
 				render: (_, record) => (
 					<div className="d-flex">
-						<AvatarStatus src={record.img} id={record.id} name={record.name} subTitle={record.email}/>
+						<Link to={`${APP_PREFIX_PATH}/main/setting/edit-profile/${record.id}`}>
+							<AvatarStatus src={record.img} name={record.name} subTitle={record.email}/>
+						</Link>
 					</div>
 				),
 				sorter: {
