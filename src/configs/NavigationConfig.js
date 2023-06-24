@@ -1,4 +1,5 @@
 import {
+  BorderOuterOutlined,
   DashboardOutlined,
   ShoppingCartOutlined,
   ShoppingOutlined,
@@ -24,6 +25,14 @@ const MainNavTree = [
     breadcrumb: false,
     isGroupTitle: true,
     submenu: [
+      {
+        key: 'main-scheduler',
+        path: `${APP_PREFIX_PATH}/main/scheduler`,
+        title: 'sidenav.main.scheduler',
+        icon: BorderOuterOutlined,
+        breadcrumb: false,
+        submenu: []
+      },
       {
         key: 'main-dashboards',
         path: `${APP_PREFIX_PATH}/dashboards/default`,

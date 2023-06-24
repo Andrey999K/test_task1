@@ -45,4 +45,9 @@ export const protectedRoutes = [
         path: `${APP_PREFIX_PATH}/main/setting/*`,
         component: React.lazy(() => import('views/app-views/main/setting')),
     },
+    {
+        key: 'main.scheduler',
+        path: `${APP_PREFIX_PATH}/main/scheduler`,
+        component: React.lazy(() => import('views/app-views/main/scheduler')),
+    }
 ]

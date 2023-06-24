@@ -3,6 +3,8 @@
 
   "sidenav.main": "Основные",
 
+  "sidenav.main.scheduler": "Планировщик",
+
   "sidenav.main.dashboard": "Дашборд",
 
   "sidenav.main.ecommerce": "Каталог",
