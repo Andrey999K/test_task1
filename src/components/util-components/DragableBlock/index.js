@@ -1,16 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const DraggableBlock = ({ children, onDragStart, onDragEnd, onDrop, item, ...attr }) => {
+const DraggableBlock = ({ children, onDragStart, onDragEnd, item, onMap, ...attr }) => {
 
   return (
     <div style={{ background: "#000000", borderRadius: "10px" }} {...attr}>
       <div
         draggable={true}
         className="cursor-grab"
-        onDragStart={e => onDragStart(e, item)}
+        onDragStart={e => onDragStart(e, item, onMap)}
         onDragEnd={e => onDragEnd(e, item)}
-        onDrop={e => onDrop(e, item)}
       >{children}</div>
     </div>
   );
@@ -23,8 +22,8 @@ DraggableBlock.propTypes = {
   ]).isRequired,
   onDragStart: PropTypes.func,
   onDragEnd: PropTypes.func,
-  onDrop: PropTypes.func,
-  item: PropTypes.object
+  item: PropTypes.object,
+  onMap: PropTypes.bool
 };
 
 export default DraggableBlock;

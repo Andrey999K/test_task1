@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Image } from "antd";
 import DraggableBlock from "../DragableBlock";
 
-const GridSheduler = ({ width, height, grid, onDragOver, onDragLeave, onDrop, elements }) => {
+const GridSheduler = ({ width, height, grid, onDragOver, onDragLeave, onDrop, elements, onDragStart, onDragEnd }) => {
   
   const rows = [];
   const cells = [];
@@ -59,10 +59,14 @@ const GridSheduler = ({ width, height, grid, onDragOver, onDragLeave, onDrop, el
             left: `${element.x}px`
           }}
           key={element.id}
+          onDragStart={onDragStart}
+          onDragEnd={onDragEnd}
+          item={{ id: element.idItem, type: element.type, idElem: element.id }}
+          onMap={true}
         >
           <Image
             width={100}
-            src="/img/scheduler/chair.png"
+            src={`/img/scheduler/${element.type === "chair" ? "chairs" : "tables"}/${element.idItem}.png`}
           />
         </DraggableBlock>
       )}
@@ -82,7 +86,9 @@ GridSheduler.propTypes = {
   grid: PropTypes.bool,
   onDragOver: PropTypes.func,
   onDragLeave: PropTypes.func,
-  onDrop: PropTypes.func
+  onDrop: PropTypes.func,
+  onDragStart: PropTypes.func,
+  onDragEnd: PropTypes.func
 };
 
 export default GridSheduler;
